@@ -12,6 +12,11 @@
     var angularModule = angular.module('jameslk.angular-validation-tools', [])
 
     .provider('ValidationToolsConfig', function() {
+        var config = this;
+        this.$get = function() {
+            return config;
+        };
+
         function RuleError(errorName, errorMessage) {
             this.errorName = errorName;
             this.errorMessage = errorMessage;
@@ -21,7 +26,11 @@
 
         this.getRuleErrors = function() {
             return this._ruleErrors;
-        }
+        };
+
+        this.getRuleError = function(rule) {
+            return this._ruleErrors[rule];
+        };
 
         this.setRuleErrors = function(ruleErrors) {
             this._ruleErrors = ruleErrors;
@@ -32,20 +41,6 @@
             this._ruleErrors[errorName] = new RuleError(errorName, errorMessage);
             return this;
         }
-
-        var config = this;
-
-        this.$get = function() {
-            return {
-                getRuleErrors: function() {
-                    return config.getRuleErrors();
-                },
-
-                getRuleError: function(rule) {
-                    return config.getRuleErrors[rule];
-                }
-            }
-        };
 
         this
             .setRuleError('required', 'This field is required')
