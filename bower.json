@@ -1,0 +1,26 @@
+{
+  "name": "angular-validation-tools",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jameslk/angular-validation-tools",
+  "authors": [
+    "James Koshigoe <james@jameskoshigoe.com>"
+  ],
+  "description": "A form validation package for AngularJS that reduces unnecessary boilerplate logic and clutter",
+  "main": "angular-validation-tools.js",
+  "keywords": [
+    "validation",
+    "validations",
+    "form",
+    "forms",
+    "angular",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
