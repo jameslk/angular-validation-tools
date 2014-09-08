@@ -228,4 +228,8 @@
     });
 
     exportModule(angularModule);
-})(angular, module, define);
+})(
+    angular, 
+    typeof module !== 'undefined' ? module : null,
+    typeof define !== 'undefined' ? define : null
+);
